@@ -1,0 +1,27 @@
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.auth form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.auth p{
+    cursor: pointer;
+}
+
+.auth h2{
+    text-align: center;
+}

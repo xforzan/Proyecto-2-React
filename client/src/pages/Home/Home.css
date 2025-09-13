@@ -1,0 +1,14 @@
+.arroba {
+  background: linear-gradient(270deg, #ff6a00, #ee0979, #00c6ff, #0072ff);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 6s ease infinite;
+  font-weight: bold;
+}
+
+@keyframes rainbow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

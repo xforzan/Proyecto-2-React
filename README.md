@@ -109,7 +109,7 @@ npm run dev
 
 <div align="center">
 
-💻 Desarrollado como Proyecto 1 - Backend
+💻 Desarrollado como Proyecto 2 - React
 Con ❤️ para aprender y crecer🚀
 
 </div>

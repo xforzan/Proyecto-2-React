@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { uploadAvatar } from "../../utils/AvatarUploader";
 
 const Account = () => {
-  const { user, error, logout, setAvatar, loading } = useContext(AuthContext);
+  const { user, error, logout, setAvatar, loading, deleteUser } = useContext(AuthContext);
 
   const [sessionClosed, setSessionClosed] = useState(false);
   const [loading2, setLoading] = useState(false);
@@ -48,10 +48,7 @@ const Account = () => {
   };
 
   const handleDelete = async () => {
-    const data = await fetch("http://localhost:3000/api/v1/users/me", {
-      method: "DELETE",
-      credentials: "include",
-    });
+    deleteUser()
     setDeletedAccount(true);
     logout();
   };

@@ -67,7 +67,7 @@ const register = async (req, res) => {
 
     res.status(201).json({ message: "Usuario creado"});
   } catch (error) {
-    res.status(500).json({ message: "Ha habido un problema al crear el usuraio", error });
+    res.status(500).json({ message: "Ha habido un problema al crear el usuario", error });
   }
 };
 

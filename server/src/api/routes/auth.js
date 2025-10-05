@@ -5,8 +5,8 @@ const upload = require("../../middlewares/file")
 
 const routerAuth = express.Router()
 
-routerAuth.post("/login", login)
-routerAuth.post("/register", upload.single("avatar"), register)
+routerAuth.post("/login", isLoggedIn,  login)
+routerAuth.post("/register", upload.single("avatar"), isLoggedIn,  register)
 routerAuth.post("/verify", isLoggedIn, verify)
 routerAuth.post("/logout", isLoggedIn, logOut)
 

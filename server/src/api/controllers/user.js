@@ -25,9 +25,9 @@ const deleteMyUser = async (req, res) => {
     const tokenData = jwt.verify(token, process.env.JWT_SECRET);
     const userData = await User.findByIdAndDelete(tokenData.userId);
     deleteFile(userData.avatar);
-    res.status(200).send("Usuario eliminado satisfactoriamente");
+    res.status(200).json({message: "Usuario eliminado satisfactoriamente"});
   } catch (error) {
-    res.status(500).send("Ha habido un error al eliminar el usuario");
+    res.status(500).json({message: "Ha habido un problema al eliminar el usuario.", error});
   }
 };
 

@@ -1,4 +1,3 @@
-import { set } from "mongoose";
 import { createContext, useState, useEffect } from "react";
 
 export const AuthContext = createContext();
@@ -17,7 +16,6 @@ export const AuthProvider = ({ children }) => {
         });
 
         if (!res.ok) console.error("No autenticado");
-        console.log("hola")
 
         const data = await res.json();
         setUser(data);
@@ -81,9 +79,6 @@ export const AuthProvider = ({ children }) => {
           return;
         }
 
-        console.log("Cuenta creada satisfactoriamente");
-        console.log(await resRegister.json())
-
     }catch (error){
       console.error("Ha habido un problema al registrarse")
     }finally{
@@ -92,11 +87,15 @@ export const AuthProvider = ({ children }) => {
   }
 
   const logout = async () => {
-    await fetch("http://localhost:3000/api/v1/auth/logout", {
-      method: "POST",
-      credentials: "include",
-    });
+    try{
+      await fetch("http://localhost:3000/api/v1/auth/logout", {
+        method: "POST",
+        credentials: "include",
+      });
     setUser(null);
+    }catch (error){
+      console.error("Error al cerrar sesion")
+    }
   };
 
   const deleteUser = async () =>{
@@ -106,8 +105,6 @@ export const AuthProvider = ({ children }) => {
       method: "DELETE",
       credentials: "include",
     });
-    const result = await data.json()
-    console.log(result)
     }catch (error){
       console.error("Ha habido un problema al eliminar el usuario.",error)
     }

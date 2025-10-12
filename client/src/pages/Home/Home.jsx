@@ -3,10 +3,10 @@ import "./Home.css";
 const Hola = () => {
   return (
     <>
-      <h1>
+      <h2 className="homeTitle">
         Hola bienvenid
         <span className="arroba">@</span>
-      </h1>
+      </h2>
     </>
   );
 };

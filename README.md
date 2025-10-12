@@ -37,7 +37,7 @@ cd Proyecto-2-React/
 
 ### 3️⃣ Instalar las dependencias del cliente y del servidor
 ```bash
-npm install:all
+npm run install:all
 ```
 ### 4️⃣ Configurar archivo `.dev` dentro de la carpeta server con las variables
 ```bash

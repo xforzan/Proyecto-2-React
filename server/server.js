@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 
 const { connectDB } = require("./src/config/db");
 const { connectCloudinary } = require("./src/config/cloudinary");
+const cors = require("cors")
 
 const routerUsers = require("./src/api/routes/user");
 const routerAuth = require("./src/api/routes/auth");
@@ -14,6 +15,11 @@ connectDB();
 
 const app = express();
 const PORT = 3000;
+
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true 
+}));
 
 app.use(express.json());
 
